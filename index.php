@@ -1,6 +1,10 @@
 <?php
 $dsn = 'mysql:dbname=sample_db;host=localhost;';
+<<<<<<< HEAD
 $user = 'ubuntumysqlnnaoya';
+=======
+$user = 'otsubo';
+>>>>>>> 1cbaf7615704b5f07be9f3d670a38448405a15c4
 $password = 'morijyobi';
 try {
     $dbh = new PDO($dsn, $user, $password);
@@ -15,13 +19,22 @@ try {
 ​
 <!DOCTYPE html>
 <html lang="ja">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+=======
+​
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> 1cbaf7615704b5f07be9f3d670a38448405a15c4
     <title>LAMP SAMPLE PAGE</title>
 </head>
+​
 <body>
+<<<<<<< HEAD
     <nav class="navber navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -92,3 +105,13 @@ try {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
+=======
+    <div class="container">
+        <?php foreach ($result as $value) {
+            echo "<h1>$value[id] $value[name] $value[age]</h1>";
+        } ?>
+    </div>
+</body>
+​
+</html>
+>>>>>>> 1cbaf7615704b5f07be9f3d670a38448405a15c4
