@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=sample_db;host=localhost;';
+$dsn = 'mysql:dbname=sample_db;host=127.0.0.1;';
 $user = 'root';
 $password = 'morijyobiubuntumysqlnn';
 try {
@@ -41,6 +41,24 @@ try {
                 デザインはBootstrapを使用しています。
             </p>
         </div>
+    </div>
+
+    <div class="container">
+        <?php if($_GET['fg'] == 1) { ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Processing is complete <strong>Success!!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php } else if ($_GET['fg'] == 2) { ?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                Processing is complete <strong>Oh no!!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php ?>
     </div>
 
     <div class="container">

@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=sample_db;host=localhost;';
+$dsn = 'mysql:dbname=sample_db;host=127.0.0.1;';
 $user = 'root';
 $password = 'morijyobiubuntumysqlnn';
 try {
@@ -18,7 +18,7 @@ try {
     header('Location: index.php?fg=1')
 } catch (PDOException $e) {
     // echo "接続失敗: " . $e->getMessage() . "\n";
-    header('Location: index.php?fg=1?err=$e->getMessage()')
+    header('Location: index.php?fg=2?err=$e->getMessage()')
     exit();
 }
 ?>
