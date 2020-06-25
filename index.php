@@ -7,6 +7,8 @@ try {
 ​
     $sql = "select * from user";
     $result = $dbh->query($sql);
+    $del_list = $dbh->query($sql);
+
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage() . "\n";
     exit();
@@ -97,8 +99,51 @@ try {
                     <button type="submit" class="btn btn-primary">Insert</button>
                 </form>
             </div>
-            <div id="tab3" class="tab-pane">sample3</div>
-            <div id="tab4" class="tab-pane">sample4</div>
+            <div id="tab3" class="tab-pane">
+                <form class="mt-5" action="./insert.php" method="POST" >
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input class="form-control" type="text" name="id" id="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input class="form-control" type="text" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input class="form-control" type="text" name="age" id="age">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+            <div id="tab4" class="tab-pane">
+                <table class="table table-hover mt-2">
+                    <caption>Show User Table</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($del_list as $value){ ?>
+                            <tr>
+                                <th><?php echo "$value[id]" ?></th>
+                                <td><?php echo "$value[name]" ?></td>
+                                <td><?php echo "$value[age]" ?></td>
+                                <td>
+                                    <form action="./delete.php" method="$_GET">
+                                        <input type="text" class="d-none" name="id">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php } ?> 
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
